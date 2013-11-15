@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h1>Actors</h1>
+</div>
+
+<p><%= link_to 'Add a New Actor', new_actor_url, class: 'btn btn-primary' %></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Bio</th>
+      <th>Image url</th>
+      <th>Dob</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @actors.each do |actor| %>
+      <tr>
+        <td><%= actor.name %></td>
+        <td><%= actor.bio %></td>
+        <td><%= actor.image_url %></td>
+        <td><%= actor.dob %></td>
+        <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, actor_url(actor), class: 'btn btn-primary' %></td>
+        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_actor_url(actor), class: 'btn btn-warning' %></td>
+        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, actor_url(actor), method: 'delete', data: { confirm: "Do you really want to delete this actor?" }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
