@@ -11,7 +11,7 @@
       <th>Year</th>
       <th>Duration</th>
       <th>Description</th>
-      <th>Image url</th>
+      <th>Image</th>
       <th>Director</th>
       <th></th>
       <th></th>
@@ -27,7 +27,7 @@
         <td><%= movie.duration %></td>
         <td><%= movie.description %></td>
         <td><%= image_tag movie.image_url, width: 200 %></td>
-        <td><%= movie.director.name %></td>
+        <td><%= link_to(movie.director.name, director_url(movie.director.id)) %></td>
         <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, movie_url(movie), class: 'btn btn-primary' %></td>
         <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_movie_url(movie), class: 'btn btn-warning' %></td>
         <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, movie_url(movie), method: 'delete', data: { confirm: "Do you really want to delete this movie?" }, class: 'btn btn-danger' %></td>

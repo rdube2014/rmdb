@@ -15,18 +15,18 @@
   <dt>Description</dt>
   <dd><%= @movie.description %></dd>
 
-  <dt>Image url</dt>
-  <dd><%= @movie.image_url %></dd>
+  <dt>Image</dt>
+  <dd><%= image_tag(@movie.image_url) %></dd>
 
   <dt>Director</dt>
-  <dd><%= @movie.director.name %> (<%= @movie.director.dob %>)</dd>
+  <dd><%= link_to(@movie.director.name, director_url(@movie.director.id)) %></dd>
 
 </dl>
 
 <h1>Cast</h1>
 <ul>
   <% @movie.actors.each do |actor| %>
-    <li><%= actor.name %></li>
+    <li><%= link_to(actor.name, actor_url(actor.id)) %></li>
   <% end %>
 </ul>
 

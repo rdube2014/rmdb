@@ -7,9 +7,9 @@
   <dd><%= @role.character_name %></dd>
 
   <dt>Movie</dt>
-  <dd><%= @role.movie_id %></dd>
+  <dd><%= link_to(@role.movie.title, movie_url(@role.movie.id)) %></dd>
 
   <dt>Actor</dt>
-  <dd><%= @role.actor_id %></dd>
+  <dd><%= link_to(@role.actor.name, actor_url(@role.actor.id)) %></dd>
 
 </dl>

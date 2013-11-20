@@ -9,10 +9,20 @@
   <dt>Bio</dt>
   <dd><%= @actor.bio %></dd>
 
-  <dt>Image url</dt>
-  <dd><%= @actor.image_url %></dd>
+  <dt>Image</dt>
+  <dd><%= image_tag(@actor.image_url) %></dd>
 
   <dt>Dob</dt>
   <dd><%= @actor.dob %></dd>
 
 </dl>
+
+<div class="page-header">
+  <h2>Filmography</h2>
+</div>
+
+<ul>
+  <% @actor.movies.each do |movie| %>
+    <li><%= link_to movie.title, movie_url(movie.id) %> (<%= movie.year %>)</li>
+  <% end %>
+</ul>
