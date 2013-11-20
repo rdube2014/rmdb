@@ -19,6 +19,27 @@
   <dd><%= @movie.image_url %></dd>
 
   <dt>Director</dt>
-  <dd><%= @movie.director_id %></dd>
+  <dd><%= @movie.director.name %> (<%= @movie.director.dob %>)</dd>
 
 </dl>
+
+<h1>Cast</h1>
+<ul>
+  <% @movie.actors.each do |actor| %>
+    <li><%= actor.name %></li>
+  <% end %>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

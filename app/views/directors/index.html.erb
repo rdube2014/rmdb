@@ -22,7 +22,7 @@
       <tr>
         <td><%= director.name %></td>
         <td><%= director.bio %></td>
-        <td><%= director.image_url %></td>
+        <td><%= image_tag director.image_url, width: 200 %></td>
         <td><%= director.dob %></td>
         <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, director_url(director), class: 'btn btn-primary' %></td>
         <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_director_url(director), class: 'btn btn-warning' %></td>

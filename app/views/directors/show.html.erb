@@ -16,3 +16,27 @@
   <dd><%= @director.dob %></dd>
 
 </dl>
+
+<div class="page-header">
+  <h1>Filmography</h1>
+</div>
+
+<ul>
+  <% @director.movies.each do |movie| %>
+    <li><%= link_to movie.title, movie_url(movie.id) %> (<%= movie.year %>)</li>
+  <% end %>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

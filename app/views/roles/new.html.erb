@@ -13,14 +13,14 @@
   <div class="form-group">
     <%= label_tag :movie_id, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= number_field_tag :movie_id, nil, class: 'form-control' %>
+      <%= select_tag :movie_id, options_from_collection_for_select(Movie.all, :id, :title), class: 'form-control' %>
     </div>
   </div>
 
   <div class="form-group">
     <%= label_tag :actor_id, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= number_field_tag :actor_id, nil, class: 'form-control' %>
+      <%= select_tag :actor_id, options_from_collection_for_select(Actor.all, :id, :name), class: 'form-control' %>
     </div>
   </div>
 

@@ -1,4 +1,6 @@
 Rmdb::Application.routes.draw do
+  root 'movies#index'
+
   # Routes for the Role resource:
   # CREATE
   get '/roles/new', controller: 'roles', action: 'new', as: 'new_role'

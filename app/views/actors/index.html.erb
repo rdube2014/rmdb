@@ -22,7 +22,7 @@
       <tr>
         <td><%= actor.name %></td>
         <td><%= actor.bio %></td>
-        <td><%= actor.image_url %></td>
+        <td><%= image_tag actor.image_url, width: 200 %></td>
         <td><%= actor.dob %></td>
         <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, actor_url(actor), class: 'btn btn-primary' %></td>
         <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_actor_url(actor), class: 'btn btn-warning' %></td>
