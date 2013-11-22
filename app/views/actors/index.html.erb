@@ -4,6 +4,8 @@
 
 <p><%= link_to 'Add a New Actor', new_actor_url, class: 'btn btn-primary' %></p>
 
+<%= paginate @actors %>
+
 <table class="table table-hover">
   <thead>
     <tr>
