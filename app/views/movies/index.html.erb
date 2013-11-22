@@ -27,10 +27,16 @@
         <td><%= movie.duration %></td>
         <td><%= movie.description %></td>
         <td><%= image_tag movie.image_url, width: 200 %></td>
-        <td><%= link_to(movie.director.name, director_url(movie.director.id)) %></td>
+        <td>
+          <% if movie.director != nil %>
+            <%= link_to(movie.director.name, director_url(movie.director.id)) %>
+          <% else %>
+            No Director Assigned
+          <% end %>
+        </td>
         <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, movie_url(movie), class: 'btn btn-primary' %></td>
         <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_movie_url(movie), class: 'btn btn-warning' %></td>
-        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, movie_url(movie), method: 'delete', data: { confirm: "Do you really want to delete this movie?" }, class: 'btn btn-danger' %></td>
+        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, movie_url(movie), method: 'delete', class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
